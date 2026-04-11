@@ -1,6 +1,5 @@
 package shell;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main
@@ -12,10 +11,14 @@ public class Main
         //User Input...
         Scanner input = new Scanner(System.in);
 
-        //REPL
+        //Exit command inside REPL
         while(true)
         {
             String name = input.nextLine();
+            if(name.equals("exit"))
+            {
+                break;
+            }
             System.out.println(name + " : command not found");
         }
     }
