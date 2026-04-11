@@ -11,10 +11,12 @@ public class Main
 
         //User Input...
         Scanner input = new Scanner(System.in);
-        String name = input.next();
 
-        //Output for user...
-        System.out.println(name + ": command not found ");
-
+        //REPL
+        while(true)
+        {
+            String name = input.nextLine();
+            System.out.println(name + " : command not found");
+        }
     }
 }
