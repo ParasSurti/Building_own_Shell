@@ -13,7 +13,7 @@ public class Main
 
     public static void REPL(Scanner input)
     {
-        //implementation the echo builtin inside REPL.
+        //implementation of echo builtin inside REPL.
         while(true)
         {
             System.out.print("$ ");
@@ -26,10 +26,21 @@ public class Main
             }
 
             //Used of echo build-in
-            else if(name.contains("echo "))
+            else if(name.startsWith("echo"))
             {
                 System.out.println(name.substring(5));
+            }
 
+            else if(name.startsWith("type "))
+            {
+                if(name.substring(5).equals("echo") || name.substring(5).equals("exit"))
+                {
+                    System.out.println( name.substring(5) + " is a shell builtin");
+                }
+                else
+                {
+                    System.out.println(name.substring(5) + " : not found ");
+                }
             }
 
             //if command is not found & would be inside the REPL loop...
